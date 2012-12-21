@@ -1,7 +1,7 @@
-form {
+form.url {
   width: 800px;
   margin: 0 auto;
-  input#url{
+  input {
     height: 35px;
     width: 600px;
     border-radius: 6px;
@@ -11,7 +11,7 @@ form {
     font-family: 'CabinRegular';
     font-size: 13px;
     letter-spacing: 1px;
-    &.collecttrash {
+    &[type="submit"] {
       width: 150px;
       background-color: #bd5037;
       text-transform: uppercase;
@@ -20,7 +20,7 @@ form {
       margin: 0 10px;
       font-size: 12px;
     }
-    &.collecttrash:active {
+    &[type="submit"]:active {
       background-color: #e08566;
     }
   }

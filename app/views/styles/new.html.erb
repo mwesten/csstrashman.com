@@ -1,5 +1,2 @@
-<%= form_for(@style, url: { action: "create" }) do |s| %>
-  <%= s.label :url %>
-  <%= s.text_field :url %>
-  <%= s.submit "Go" %>
-<% end %>
+<%= render "shared/url" %>
+<%= render "shared/feature" %>

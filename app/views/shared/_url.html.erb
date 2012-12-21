@@ -1,0 +1,4 @@
+<%= form_for(@style, url: { action: "create" }, html: { class: 'url' }) do |s| %>
+  <%= s.text_field :url, placeholder: "ENTER URL..." %>
+  <%= s.submit "Collect Trash" %>
+<% end %>
