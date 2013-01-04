@@ -13,7 +13,7 @@
   position: relative;
   width: 800px;
   margin: 0 auto;
-  div#tab-css {
+  div#tab-css, div#tab-sass {
     width: 760px;
     height: 800px;
     display: block;
@@ -27,7 +27,6 @@
   ul {
     list-style-type: none;
     margin: -2px 0;
-    width: 250px;
     float: left;
     li{
       width: 125px;
