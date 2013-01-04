@@ -1,7 +1,44 @@
-<p><%= @style.url %></p>
 
+<form class="url">
+  <input type="url" name="homepage" value="<%= @style.url %>"></input>
+  <input type="submit" value="Collect Trash" class="collecttrash"/>
+</form>
 <% if @style.css.nil? %>
-  <p>Calculating new CSS...</p>
+  <div class="loading">
+  <div class="truckanimation">
+    <img src="/assets/truck.svg" />
+    <img src="/assets/wheel-1.svg" class="spinner wheel1"/>
+    <img src="/assets/wheel-2.svg" class="spinner wheel2"/>
+    <h3>Loading...</h3>
+  </div>
+</div>
 <% else %>
- <pre><%= @style.css %></pre>
+ <pre></pre>
+<div class="outputText">
+  <h3>Collection Report: <span class="reportText"><strong>Reduced by 48%</strong></span> -&#38;-<span class="reportText"> 138 Fewer Lines</span></h3>
+</div>
+
+<div class="results">
+  
+  <div class="formats">
+    <ul>
+      <li class="cssTab"><a href="#tab-css">CSS</a></li>
+      <li class="sassTab"><a href="#tab-sass">Sass</a></li>
+    </ul>
+    <div class="actionButtons">
+      <button id="btn_compare">Compare</button>
+      <button id="btn_copy">Copy</button>
+      <button id="btn_download">Download</button>
+    </div>
+    <textarea id="tab-css" readonly="readonly">
+    <%= @style.css %>
+    </textarea>
+
+    <textarea id="tab-sass" readonly="readonly">
+    <%= @style.sass %>
+    </textarea>
+  </div>
+</div>
+
+
 <% end %>
