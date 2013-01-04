@@ -30,9 +30,9 @@
       <button id="btn_copy">Copy</button>
       <button id="btn_download">Download</button>
     </div>
-    <textarea id="tab-css" readonly="readonly">
-    <%= @style.css %>
-    </textarea>
+    <div id="tab-css" readonly="readonly">
+ <pre class="cssCode"> <%= @style.css %></pre>
+    </div>
 
     <textarea id="tab-sass" readonly="readonly">
     <%= @style.sass %>
