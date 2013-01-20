@@ -5,7 +5,14 @@ Ratiocinator](https://github.com/begriffs/css-ratiocinator).  Allows
 you to refactor CSS for your site, compare the changes, and download
 a new stylesheet.
 
-## Running
+## Running locally
+
+1. Install [PhantomJS](http://phantomjs.org/)
+1. `git submodule update --init` for dependencies
+1. `rake db:create && rake db:migrate`
+1. `rake jobs:work` to start the ratiocinating workers
+
+## Deploying to Heroku
 
 This app requires a vendored PhantomJS on Heroku, so you'll need to
 enable multiple buildpacks. Before pushing to a new Heroku instance,
