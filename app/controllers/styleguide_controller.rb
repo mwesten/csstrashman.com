@@ -1,14 +1,21 @@
 class StyleguideController < ApplicationController
-  def index
-    @modules = Hash.new
-    Dir.glob('app/views/styleguide/_*.html.erb').each do |mod|
-      name = File.basename(mod, '.html.erb')[1..-1]
-      @modules[name] = File.read mod
-    end
-  end
+  layout "styleguide"
 
-  def show
-    @name     = params[:name]
-    @contents = File.read "app/views/styleguide/_#{@name}.html.erb"
+  def index
+    widget_files = Dir.glob('app/views/styleguide/widgets/_*.html*')
+
+    @widgets = widget_files.reduce([]) do |widgets, filename|
+      lang = filename.match(/haml$/) ? 'haml' : 'markup'
+
+      name = File.basename(filename)
+                 .sub(/.html.*/, '')
+                 .sub(/^_/, '')
+
+      widgets << { :name       => name,
+                   :filename   => filename,
+                   :contents   => File.read(filename),
+                   :lang       => lang }
+      widgets
+    end
   end
 end

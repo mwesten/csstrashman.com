@@ -1,7 +1,12 @@
-<dl class="monarchy-styleguide">
-<% @modules.each do |name, contents| %>
- <dt><%= "Module \"#{name.capitalize}\"" %></dt>
- <dd><%= raw contents %></dd>
- <dd><pre class="source"><%= contents %></pre></dd>
-<% end %>
+<nav>
+  <ul>
+    <li><a>Widgets</a>
+    <ul>
+      <%= render :partial => 'widget_link', :collection => @widgets, :as => :widget %>
+    </ul>
+    </li>
+  </ul>
+</nav>
+<dl>
+  <%= render :partial => 'widget', :collection => @widgets %>
 </dl>

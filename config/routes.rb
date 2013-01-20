@@ -1,7 +1,5 @@
 Csstrashman::Application.routes.draw do
-  match 'styleguide/:name' => 'styleguide#show'
-
-  match 'styleguide' => 'styleguide#index'
+  match 'styleguide' => 'styleguide#index' if Rails.env.development?
 
   resources :styles, only: [:new, :create, :show]
   root to: "styles#new"
