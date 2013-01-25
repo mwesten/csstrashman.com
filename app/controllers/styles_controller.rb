@@ -5,6 +5,8 @@ class StylesController < ApplicationController
 
   def create
     @style = Styles.new params[:styles]
+    @style.url = "http://#{@style.url}" unless @style.url.match /^https?:\/\//
+
     if @style.save
       @style.delay.calculate_css
       redirect_to @style, status: 303 # see other
