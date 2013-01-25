@@ -16,12 +16,17 @@
 @include font-face('CabinSemiBold', 'fonts/Cabin-SemiBold-webfont');
 @include font-face('CabinItalic', 'fonts/Cabin-Italic-webfont');
 
+html {
+  background-color: #666666;
+}
+
 body {
   font-family: 'CabinRegular', Arial, san-serif;
   letter-spacing: 1px;
   font-size: 12px;
   margin: 0;
   height: 100%;
+  background-color: white;
   pre.source {
     border: 1px solid #e5e5e5;
     width: 900px;
@@ -43,4 +48,3 @@ body {
     margin: 35px 0;
   }
 }
-
