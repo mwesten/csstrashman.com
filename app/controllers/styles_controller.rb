@@ -22,4 +22,11 @@ class StylesController < ApplicationController
       raise ActionController::RoutingError.new('Not Found')
     end
   end
+
+  def done?
+    result = {id: params[:id]}
+    style = Styles.find_by_id params[:id]
+    result[:done] = (style.present? && style.css.present?)
+    render json: result
+  end
 end

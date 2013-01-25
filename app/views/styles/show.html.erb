@@ -1,39 +1,45 @@
 <% if @style.css.nil? %>
   <div class="loading">
-  <div class="truckanimation">
-    <img src="/assets/truck.svg" />
-    <img src="/assets/wheel-1.svg" class="spinner wheel1"/>
-    <img src="/assets/wheel-2.svg" class="spinner wheel2"/>
-    <h3>Loading...</h3>
+    <div class="truckanimation">
+      <img src="/assets/truck.svg" />
+      <img src="/assets/wheel-1.svg" class="spinner wheel1"/>
+      <img src="/assets/wheel-2.svg" class="spinner wheel2"/>
+      <h3>Calculating...</h3>
+    </div>
   </div>
-</div>
+  <script type="text/javascript">
+    function checkDone() {
+      $.getJSON(document.location.pathname + '/done', function(data) {
+        if(data['done']) {
+          document.location.reload(true);
+        }
+      });
+    };
+    window.setInterval(checkDone, 4000);
+  </script>
 <% else %>
- <pre></pre>
-<div class="outputText">
-  <h3>Results for <span class="reportText"><%= @style.url %></span></h3>
-</div>
+  <div class="outputText">
+    <h3>Results for <span class="reportText"><%= @style.url %></span></h3>
+  </div>
 
-<div class="results">
-  
-  <div class="formats">
-    <ul>
-      <li class="cssTab"><a href="#tab-css">CSS</a></li>
-      <li class="sassTab"><a href="#tab-sass">Sass</a></li>
-    </ul>
-    <div class="actionButtons">
-      <button id="btn_compare">Compare</button>
-      <button id="btn_copy">Copy</button>
-      <button id="btn_download">Download</button>
-    </div>
-    <div id="tab-css" readonly="readonly">
- <pre class="cssCode"> <%= @style.css %></pre>
-    </div>
+  <div class="results">
+    <div class="formats">
+      <ul>
+        <li class="cssTab"><a href="#tab-css">CSS</a></li>
+        <li class="sassTab"><a href="#tab-sass">Sass</a></li>
+      </ul>
+      <div class="actionButtons">
+        <button id="btn_compare">Compare</button>
+        <button id="btn_copy">Copy</button>
+        <button id="btn_download">Download</button>
+      </div>
+      <div id="tab-css" readonly="readonly">
+        <pre class="cssCode"> <%= @style.css %></pre>
+      </div>
 
-    <div id="tab-sass" readonly="readonly">
-      <pre class="cssCode"><%= @style.sass %></pre>
+      <div id="tab-sass" readonly="readonly">
+        <pre class="cssCode"><%= @style.sass %></pre>
+      </div>
     </div>
   </div>
-</div>
-
-
 <% end %>
