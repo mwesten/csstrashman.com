@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Csstrashman</title>
+  <title>CSS Trashman</title>
 
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag "application", :media => "all" %>
   <%= csrf_meta_tags %>
   <%= favicon_link_tag %>
+  <meta name="description"
+        content="Refactors your CSS and generates a new stylesheet for your site." />
 </head>
 <body>
 <%= render "shared/header" %>
