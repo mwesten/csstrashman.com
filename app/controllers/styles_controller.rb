@@ -18,6 +18,15 @@ class StylesController < ApplicationController
   def show
     begin
       @style = Styles.find params[:id]
+      respond_to do |format|
+        format.html
+        format.css do
+          render inline: @style.css
+        end
+        format.sass do
+          render inline: @style.sass
+        end
+      end
     rescue ActiveRecord::RecordNotFound
       raise ActionController::RoutingError.new('Not Found')
     end

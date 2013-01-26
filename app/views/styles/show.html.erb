@@ -30,8 +30,7 @@
       </ul>
       <div class="actionButtons">
         <button id="btn_compare">Compare</button>
-        <button id="btn_copy">Copy</button>
-        <button id="btn_download">Download</button>
+        <a href="<%= @style.id %>.css"><button id="btn_download">Download</button></a>
       </div>
       <div id="tab-css" readonly="readonly">
         <pre class="cssCode"><code class="language-css"><%= @style.css %></code></pre>
