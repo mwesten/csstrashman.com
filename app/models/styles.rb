@@ -7,7 +7,7 @@ class Styles < ActiveRecord::Base
 
   def calculate_css
     self.css = `phantomjs lib/css-ratiocinator/ratiocinate.js "#{url}"`
-    self.css = self.css.sub /^.*\/\* Computing/m, '/* Computing'
+    self.css = self.css.sub /^.*Consolidating styles... \*\/\n\n/m, ''
     pid, stdin, stdout, stderr = Open4::popen4 "sass-convert"
     stdin.puts self.css
     stdin.close
