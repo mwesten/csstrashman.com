@@ -1,7 +1,7 @@
 $(function() {
   var wait_time = 0;
 
-  if(_gaq) { // analytics is only initialized in production
+  if(typeof _gaq !== 'undefined') { // analytics is only initialized in production
     $('span.stButton').click(function() {
       _gaq.push(['_trackEvent', 'social', 'click']);
     });
