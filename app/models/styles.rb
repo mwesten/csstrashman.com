@@ -5,6 +5,7 @@ class Styles < ActiveRecord::Base
 
   def calculate_css
     self.css = `phantomjs lib/css-ratiocinator/ratiocinate.js "#{url}"`
+    self.css = self.css.sub /^.*\/\* Computing/m, '/* Computing'
     self.save
   end
 end
