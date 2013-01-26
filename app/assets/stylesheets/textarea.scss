@@ -20,7 +20,6 @@
     border: 2px solid #eee;
     border-radius: 6px;
     padding: 10px 20px;
-    z-index: 9999;
     position: relative;
     overflow: scroll; 
   }
@@ -28,6 +27,9 @@
     list-style-type: none;
     margin: -2px 0;
     float: left;
+    position: relative;
+    top: 1px;
+    z-index: 2;
     li{
       width: 125px;
       height: 50px;
@@ -43,8 +45,8 @@
         font-size: 16px;
         font-weight: bold;
         display: block;
+        outline: none;
       }
-
 
       &.cssTab {
         border-radius: 8px 0 0;
@@ -53,6 +55,11 @@
       &.sassTab {
         border-radius: 0 8px 0 0;
         margin: 0 -5px;
+      }
+
+      &.ui-state-active {
+        background: white;
+        border-bottom: 1px solid white;
       }
     }
   }
