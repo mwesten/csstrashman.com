@@ -6,6 +6,9 @@ gem 'pg'
 gem 'delayed_job_active_record'
 gem 'foreman'
 
+gem 'sass' # for the sass-convert binary
+gem 'open4'
+
 gem 'styleguide_rails'
 
 group :assets do
