@@ -1,6 +1,8 @@
 Csstrashman::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
+  GA.tracker = "UA-37927788-1"
+
   # Code is not reloaded between requests
   config.cache_classes = true
 

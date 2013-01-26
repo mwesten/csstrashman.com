@@ -22,3 +22,4 @@ group :production do
 end
 
 gem 'jquery-rails'
+gem 'google-analytics-rails'

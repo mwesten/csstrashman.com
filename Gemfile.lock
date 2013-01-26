@@ -49,6 +49,7 @@ GEM
       multi_json (~> 1.0)
     foreman (0.61.0)
       thor (>= 0.13.6)
+    google-analytics-rails (0.0.3)
     hike (1.2.1)
     hirefireapp (0.0.8)
     i18n (0.6.1)
@@ -124,6 +125,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   delayed_job_active_record
   foreman
+  google-analytics-rails
   hirefireapp
   jquery-rails
   open4
