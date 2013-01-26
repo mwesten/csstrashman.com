@@ -5,7 +5,7 @@ class StylesController < ApplicationController
 
   def create
     @style = Styles.new params[:styles]
-    @style.url = "http://#{@style.url}" unless @style.url.match /^https?:\/\//
+    @style.url = "http://#{@style.url}" unless @style.url.match /^https?:\/\//i
 
     if @style.save
       @style.delay.calculate_css
